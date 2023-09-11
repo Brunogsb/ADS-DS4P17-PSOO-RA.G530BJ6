@@ -1,0 +1,13 @@
+Métodos do estacionamento
+
+verificarVagasDisponiveis(): Retorna uma lista das vagas livres
+registrarEntrada(veiculo: Veículo, vaga: VagaEstacionamento): Registra a entrada de um veículo no estacionamento, atribuindo-lhe uma vaga
+registrarSaida(veiculo: Veículo): Registra a saída de um veículo do estacionamento, liberando a vaga
+CalcularTaxaDeEstacionamento(tempoEstacionado: Float): Calcula a taxa de estacionamento com base no tempo que um veículo permaneceu no estacionamento
+
+Objetos:
+
+Objeto da classe "Veículo" representa um veículo específico que entra no estacionamento, com informações como Fabricante, placa e modelo.
+Objeto da classe "VagaEstacionamento" representa uma vaga específica no estacionamento, com um número de vaga, tipo e status.
+Objeto da classe "Estacionamento" representa o estacionamento em si, com informações sobre capacidade, vagas ocupadas, etc.
+Objeto da classe "Pessoa" representa uma pessoa
