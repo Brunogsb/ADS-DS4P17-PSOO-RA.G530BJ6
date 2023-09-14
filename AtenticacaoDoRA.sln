@@ -1,25 +1,55 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.6.33723.286
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtenticacaoDoRA", "AtenticacaoDoRA\AtenticacaoDoRA.csproj", "{963E485D-0232-451B-ADD5-4A39606DFC6B}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{963E485D-0232-451B-ADD5-4A39606DFC6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{963E485D-0232-451B-ADD5-4A39606DFC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{963E485D-0232-451B-ADD5-4A39606DFC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{963E485D-0232-451B-ADD5-4A39606DFC6B}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {80526EEB-9A40-4160-9B31-A99D6E208D9D}
-	EndGlobalSection
-EndGlobal
+using System;
+
+// Classe base Pessoa
+class Pessoa
+{
+    public string Nome { get; set; }
+}
+
+// Classe derivada Aluno que herda de Pessoa
+class Aluno : Pessoa
+{
+    public string Documento { get; set; }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Criando um objeto Aluno utilizando herança
+        Aluno aluno = new Aluno();
+
+        // Solicitando ao usuário que digite o RA
+        Console.Write("Digite o seu R.A: ");
+        aluno.Documento = Console.ReadLine();
+
+        // Definindo o nome com base no RA
+        aluno.Nome = ObterNomePorDocumento(aluno.Documento);
+
+        // Chamando o método para mostrar os detalhes do aluno
+        MostrarDetalhesAluno(aluno);
+
+        Console.ReadLine();
+    }
+
+    // Método para obter o nome com base no RA
+    static string ObterNomePorDocumento(string documento)
+    {
+        // Lógica para obter o nome associado ao RA (pode ser um dicionário, banco de dados, etc.)
+        if (documento == "G530BJ6")
+        {
+            return "Bruno Gomes Barbosa";
+        }
+        else
+        {
+            return "Informação não encontrada";
+        }
+    }
+
+    // Método para mostrar os detalhes do aluno
+    static void MostrarDetalhesAluno(Aluno aluno)
+    {
+        Console.WriteLine($"Nome: {aluno.Nome}");
+        Console.WriteLine($"Documento: {aluno.Documento}");
+    }
+}
